@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Verified — MARK UPSC</title>
+<meta name="robots" content="noindex">
+
+<!--
+  IMPORTANT: This page intentionally contains NO Supabase JS client and
+  makes NO calls to any auth SDK. Supabase's confirmation link redirects
+  here with an auth token in the URL (e.g. #access_token=...). If this
+  page loaded the Supabase client with default settings, that token would
+  silently log in whichever device opened this link (e.g. a phone),
+  even though the person is trying to log in on a different device
+  (e.g. their laptop). By keeping this page static — no SDK, no auth
+  calls — opening this link can NEVER create a session here. The actual
+  laptop/original device detects verification itself by polling
+  signInWithPassword in index.html, and logs in there instead.
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F7FD;
+    --surface:#FFFFFF;
+    --indigo:#4F46E5;
+    --violet:#7C3AED;
+    --green:#16A34A;
+    --green-soft:#E9F9EF;
+    --ink:#15172E;
+    --ink-soft:#5C6080;
+    --line:#E7E8F5;
+    --display:'Sora', sans-serif;
+    --body:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:16px;
+    max-width:440px;
+    width:100%;
+    padding:40px 32px;
+    text-align:center;
+    box-shadow:0 16px 40px rgba(21,23,46,0.08);
+  }
+  .check{
+    width:64px; height:64px;
+    margin:0 auto 22px;
+    border-radius:50%;
+    background:var(--green-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .check svg{ width:30px; height:30px; }
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:1.5rem;
+    letter-spacing:-0.01em;
+    margin-bottom:10px;
+  }
+  p{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    line-height:1.6;
+  }
+  .hint{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .brand{
+    margin-top:28px;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 13l4 4L19 7" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>Email Verified!</h1>
+    <p>Your email address has been confirmed. You're all set.</p>
+    <div class="hint">
+      If you started signing up on another device (like your laptop), head back there now — it will log you in automatically within a few seconds.
+    </div>
+    <div class="brand">MARK UPSC</div>
+  </div>
+</body>
+</html>

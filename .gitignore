@@ -1,0 +1,21 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and local tooling
+node_modules/
+.wrangler/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Private credentials and certificates
+*.pem
+*.key

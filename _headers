@@ -1,0 +1,37 @@
+# Netlify _headers file
+# https://docs.netlify.com/routing/headers/
+#
+# Goal: stop re-downloading the full page/JS/CSS on every visit.
+# - HTML pages: always revalidate (so users get new deploys promptly),
+#   but "must-revalidate" lets the browser send a conditional request
+#   (If-None-Match) and get a tiny 304 back instead of the full file
+#   when nothing changed.
+# - styles.css / hub.js / app.js: same conditional-revalidate approach.
+#   NOTE: bump the CACHE_VERSION in sw.js on every deploy that changes
+#   these, since the filenames themselves aren't content-hashed.
+# - Icons and the manifest: these basically never change once shipped,
+#   so cache them for a full year.
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/styles.css
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/hub.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/app.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/manifest.json
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate

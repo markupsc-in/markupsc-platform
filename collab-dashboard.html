@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Earnings — MARK UPSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FD;
+  --surface:#FFFFFF;
+  --indigo:#4F46E5;
+  --violet:#7C3AED;
+  --amber:#F59E0B;
+  --coral:#FB6B4C;
+  --green:#16A34A;
+  --green-soft:#E9F9EF;
+  --ink:#15172E;
+  --ink-soft:#5C6080;
+  --line:#E7E8F5;
+  --display:'Sora', sans-serif;
+  --body:'Inter', sans-serif;
+  --mono:'JetBrains Mono', monospace;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  line-height:1.5;
+  min-height:100vh;
+  padding:32px 20px 60px;
+}
+.wrap{max-width:920px; margin:0 auto;}
+
+/* header */
+.top{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:28px;}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--display); font-weight:800; font-size:1.1rem;}
+.brand .mark{width:32px; height:32px; border-radius:9px; background:linear-gradient(135deg,var(--indigo),var(--violet)); display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--display); font-weight:800; font-size:0.85rem;}
+.live-pill{display:inline-flex; align-items:center; gap:7px; background:var(--surface); border:1px solid var(--line); padding:6px 12px 6px 8px; border-radius:30px; font-size:0.76rem; font-weight:600; color:var(--ink-soft);}
+.live-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 0 3px var(--green-soft); animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
+
+/* states */
+#loadingState, #errorState{display:none; text-align:center; padding:80px 20px; color:var(--ink-soft);}
+#errorState h2{font-family:var(--display); color:var(--ink); margin-bottom:8px;}
+#errorState p{max-width:380px; margin:0 auto;}
+
+#dashboard{display:none;}
+
+.greet{margin-bottom:26px;}
+.greet .eyebrow{display:inline-block; font-family:var(--mono); font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--indigo); background:#EEEDFD; padding:5px 12px; border-radius:20px; margin-bottom:12px;}
+.greet h1{font-family:var(--display); font-size:clamp(1.5rem,3.4vw,2rem); font-weight:800; letter-spacing:-0.01em;}
+.greet .sub{color:var(--ink-soft); margin-top:6px; font-size:0.94rem;}
+.greet .sub code{font-family:var(--mono); background:var(--surface); border:1px solid var(--line); padding:2px 8px; border-radius:6px; font-size:0.85rem;}
+
+/* stat grid */
+.stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px;}
+@media(max-width:760px){.stat-grid{grid-template-columns:1fr 1fr;}}
+.stat-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:20px;}
+.stat-card .label{font-size:0.78rem; color:var(--ink-soft); font-weight:600; margin-bottom:8px;}
+.stat-card .value{font-family:var(--mono); font-weight:700; font-size:1.5rem;}
+.stat-card.total .value{color:var(--indigo);}
+.stat-card.pending .value{color:var(--amber);}
+.stat-card.paid .value{color:var(--green);}
+
+/* activity */
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+.panel-head{padding:18px 22px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+.panel-head h3{font-family:var(--display); font-size:1.05rem; font-weight:700;}
+.panel-head .count{font-size:0.8rem; color:var(--ink-soft);}
+.activity-empty{padding:40px 22px; text-align:center; color:var(--ink-soft); font-size:0.92rem;}
+table{width:100%; border-collapse:collapse; font-size:0.86rem;}
+thead th{text-align:left; padding:10px 22px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); font-weight:700; border-bottom:1px solid var(--line);}
+tbody td{padding:12px 22px; border-bottom:1px dashed var(--line); color:var(--ink);}
+tbody tr:last-child td{border-bottom:none;}
+.plan-badge{display:inline-block; padding:3px 10px; border-radius:20px; font-size:0.75rem; font-weight:700; background:#EEEDFD; color:var(--indigo); text-transform:capitalize;}
+.status-badge{display:inline-flex; align-items:center; gap:5px; font-size:0.78rem; font-weight:600;}
+.status-badge.pending{color:var(--amber);}
+.status-badge.paid{color:var(--green);}
+.amt{font-family:var(--mono); font-weight:700;}
+
+.foot-note{margin-top:20px; text-align:center; font-size:0.78rem; color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand"><span class="mark">M</span> MARK UPSC</div>
+    <div class="live-pill"><span class="dot"></span><span id="liveLabel">Live</span></div>
+  </div>
+
+  <div id="loadingState">Loading your dashboard…</div>
+
+  <div id="errorState">
+    <h2>Couldn't load this dashboard</h2>
+    <p id="errorMsg">This link looks invalid or expired. Double-check the link, or ask MARK UPSC for a fresh one.</p>
+  </div>
+
+  <div id="dashboard">
+    <div class="greet">
+      <span class="eyebrow">Collaborator dashboard</span>
+      <h1 id="influencerName">—</h1>
+      <div class="sub">Coupon code <code id="couponCode">—</code> · <span id="couponStatus"></span></div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card total">
+        <div class="label">Total referrals</div>
+        <div class="value" id="statReferrals">0</div>
+      </div>
+      <div class="stat-card total">
+        <div class="label">Total earned</div>
+        <div class="value" id="statTotal">₹0</div>
+      </div>
+      <div class="stat-card pending">
+        <div class="label">Pending payout</div>
+        <div class="value" id="statPending">₹0</div>
+      </div>
+      <div class="stat-card paid">
+        <div class="label">Already paid</div>
+        <div class="value" id="statPaid">₹0</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Recent referrals</h3>
+        <span class="count" id="recentCount"></span>
+      </div>
+      <div id="activityEmpty" class="activity-empty" style="display:none;">No referrals yet — once someone uses your code, it'll show up here.</div>
+      <table id="activityTable" style="display:none;">
+        <thead>
+          <tr><th>Date</th><th>Plan</th><th>Cycle</th><th>Your commission</th><th>Status</th></tr>
+        </thead>
+        <tbody id="activityBody"></tbody>
+      </table>
+    </div>
+
+    <div class="foot-note">Updates automatically every 30 seconds · Last refreshed <span id="lastRefreshed">—</span></div>
+  </div>
+
+</div>
+
+<script>
+// Point this at your deployed Cloudflare Worker (same one the main site uses).
+const BACKEND_URL = "https://markupsc-proxy.knowledgespark99.workers.dev";
+const REFRESH_MS = 30000;
+
+const params = new URLSearchParams(window.location.search);
+const token = (params.get('token') || '').trim();
+
+const el = id => document.getElementById(id);
+
+function inr(n){
+  return '₹' + Math.round(n || 0).toLocaleString('en-IN');
+}
+
+function showState(state){
+  el('loadingState').style.display = state === 'loading' ? 'block' : 'none';
+  el('errorState').style.display   = state === 'error'   ? 'block' : 'none';
+  el('dashboard').style.display    = state === 'ready'    ? 'block' : 'none';
+}
+
+function render(data){
+  el('influencerName').textContent = data.influencerName || data.couponCode;
+  el('couponCode').textContent = data.couponCode;
+  el('couponStatus').textContent = data.couponActive ? 'Active' : 'Inactive';
+  el('couponStatus').style.color = data.couponActive ? 'var(--green)' : 'var(--coral)';
+
+  el('statReferrals').textContent = data.stats.totalReferrals;
+  el('statTotal').textContent   = inr(data.stats.totalCommission);
+  el('statPending').textContent = inr(data.stats.pendingCommission);
+  el('statPaid').textContent    = inr(data.stats.paidCommission);
+
+  el('recentCount').textContent = data.recent.length + ' shown';
+
+  if (!data.recent.length){
+    el('activityEmpty').style.display = 'block';
+    el('activityTable').style.display = 'none';
+  } else {
+    el('activityEmpty').style.display = 'none';
+    el('activityTable').style.display = 'table';
+    el('activityBody').innerHTML = data.recent.map(r => {
+      const d = new Date(r.date);
+      const dateStr = isNaN(d) ? '—' : d.toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'});
+      const statusCls = r.status === 'paid' ? 'paid' : 'pending';
+      const statusLabel = r.status === 'paid' ? '✅ Paid' : '⏳ Pending';
+      return `<tr>
+        <td>${dateStr}</td>
+        <td><span class="plan-badge">${r.plan || '—'}</span></td>
+        <td>${r.cycle || '—'}</td>
+        <td class="amt">${inr(r.commissionAmount)}</td>
+        <td><span class="status-badge ${statusCls}">${statusLabel}</span></td>
+      </tr>`;
+    }).join('');
+  }
+
+  el('lastRefreshed').textContent = new Date().toLocaleTimeString('en-IN');
+}
+
+async function load(isFirstLoad){
+  if (isFirstLoad) showState('loading');
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/collab-dashboard?token=${encodeURIComponent(token)}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to load');
+    render(data);
+    showState('ready');
+  } catch (err) {
+    if (isFirstLoad){
+      el('errorMsg').textContent = err.message || 'This link looks invalid or expired.';
+      showState('error');
+    }
+    // On refresh failures after a successful first load, fail quietly —
+    // keep showing the last good data rather than flashing an error.
+  }
+}
+
+if (!token || token.length < 16){
+  el('errorMsg').textContent = 'This link is missing its access token. Ask MARK UPSC for your dashboard link.';
+  showState('error');
+} else {
+  load(true);
+  setInterval(() => load(false), REFRESH_MS);
+}
+</script>
+</body>
+</html>
