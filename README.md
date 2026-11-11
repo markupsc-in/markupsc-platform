@@ -128,3 +128,31 @@ Cloud Deployment| Website hosting and deployment through Cloudflare.
 - Context-aware information retrieval.
 - Accessible web-based learning experience.
 - Foundation for future scalability and enhancements.
+
+---
+
+🛠️ Technology Stack
+
+MARK UPSC combines modern web technologies and AI integrations to create an accessible, intelligent UPSC preparation platform.
+
+🌐 Frontend Development
+
+"HTML5" (https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+"CSS3" (https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+"JavaScript" (https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+🤖 Artificial Intelligence
+
+"AI" (https://img.shields.io/badge/Artificial_Intelligence-412991?style=for-the-badge&logo=openai&logoColor=white)
+"LLM" (https://img.shields.io/badge/Large_Language_Models-6A5ACD?style=for-the-badge)
+"RAG" (https://img.shields.io/badge/Retrieval_Augmented_Generation-008080?style=for-the-badge)
+
+☁️ Hosting & Deployment
+
+"Cloudflare" (https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+"GitHub" (https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+🔧 Development Tools
+
+"VS Code" (https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
+"Git" (https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
