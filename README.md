@@ -72,87 +72,78 @@ Cloudflare| Website hosting and deployment
 ---
 ---
 
- 🏗️ System Architecture & Technical Overview
+ ## 🏗️ System Architecture & Technical Design
 
-MARK UPSC is built on a modular, AI-powered web architecture that integrates multiple AI service providers, Large Language Models (LLMs), and Retrieval-Augmented Generation (RAG) to deliver an integrated UPSC preparation experience.
+MARK UPSC follows a modular, web-based architecture designed to integrate multiple AI providers, intelligent learning workflows, and UPSC preparation resources into a unified platform.
 
-🔄 Architecture Overview
+The architecture combines frontend technologies, AI-powered processing, context-aware retrieval, and cloud-based deployment to deliver an accessible and scalable learning experience.
 
+### 🔄 High-Level Architecture
+
+```mermaid
 flowchart TD
-    A["👤 UPSC Aspirants"] --> B["🌐 MARK UPSC Platform"]
+    A["UPSC Aspirant"] --> B["MARK UPSC Web Interface"]
 
-    B --> C["📚 Learning Resources"]
-    B --> D["🤖 AI Services Layer"]
+    B --> C["Frontend Application"]
 
-    D --> E["🔗 Multiple AI Providers"]
-    D --> F["🧠 LLM Processing"]
-    D --> G["🔎 RAG Integration"]
+    C --> D["Learning & Preparation Modules"]
+    C --> E["AI Interaction Layer"]
+    C --> F["User Dashboard"]
 
-    E --> H["⚙️ AI Processing"]
-    F --> H
-    G --> H
+    D --> G["Study, Revise & Practice"]
+    D --> H["PYQs & Current Affairs"]
+    D --> I["Progress Tracking"]
 
-    H --> I["📝 Answer Evaluation"]
-    H --> J["🎯 Exam Preparation"]
-    H --> K["💡 Learning Assistance"]
+    E --> J["AI Provider Integration"]
+    J --> K["Multiple AI Models"]
 
-    C --> L["🎓 Unified Learning Experience"]
-    I --> L
-    J --> L
-    K --> L
+    E --> L["LLM-Based Processing"]
+    L --> M["Answer Evaluation"]
+    L --> N["AI Mentor"]
 
-    L --> M["☁️ Cloudflare Deployment"]
+    E --> O["Retrieval-Augmented Generation"]
+    O --> P["Contextual Information Retrieval"]
 
-⚙️ Architecture Highlights
+    C --> Q["Cloudflare Hosting & Deployment"]
+```
 
-Component| Description
-Multi-Provider AI Integration| Integration with multiple AI APIs for intelligent platform capabilities.
-LLM-Based Processing| AI-powered learning and answer evaluation workflows.
-Retrieval-Augmented Generation| Context-aware information retrieval for supported workflows.
-Web Technologies| HTML5, CSS3 and JavaScript-based application.
-Cloud Deployment| Website hosting and deployment through Cloudflare.
+### ⚙️ Core Architectural Components
 
-🔁 Platform Workflow
+- **Frontend Application:** Web-based interface built using HTML5, CSS3 and JavaScript.
+- **Modular Learning System:** Integrates study materials, revision, practice, quizzes and progress tracking.
+- **Multi-Provider AI Integration:** Connects multiple AI services through an intelligent integration layer.
+- **LLM-Based Processing:** Supports AI-powered answer evaluation, learning assistance and interview preparation.
+- **Retrieval-Augmented Generation (RAG):** Enables context-aware information retrieval for supported AI workflows.
+- **Cloud Deployment:** Website hosting and deployment through Cloudflare.
 
-1. User Access: Aspirants access the MARK UPSC web platform.
-2. Resource Discovery: Users explore learning materials and preparation resources.
-3. AI Processing: Supported requests are processed through integrated AI services.
-4. Intelligent Assistance: AI and retrieval-based workflows support learning and answer evaluation.
-5. Learning Experience: Users receive relevant preparation assistance through a unified platform.
+### 🧠 AI Integration Architecture
 
-🚀 Design Principles
+MARK UPSC incorporates multiple AI providers to support intelligent educational workflows.
 
-- Modular and extensible architecture.
+Key capabilities include:
+
+- Multi-provider AI integration.
+- LLM-powered answer evaluation.
+- Context-aware AI assistance.
+- AI mentor functionality.
+- Retrieval-based information processing.
+- AI-assisted UPSC preparation workflows.
+
+### 📚 Application Workflow
+
+1. Aspirants access the MARK UPSC web platform.
+2. Users interact with the preparation dashboard.
+3. Learning modules provide study, revision and practice resources.
+4. AI services support answer evaluation and learning assistance.
+5. Progress tracking helps monitor preparation activities.
+
+### 🚀 Architecture Highlights
+
+- Modular and extensible design.
 - Multiple AI provider integration.
 - AI-assisted educational workflows.
 - Context-aware information retrieval.
-- Accessible web-based learning experience.
+- Unified UPSC preparation experience.
+- Cloud-based deployment.
 - Foundation for future scalability and enhancements.
-
----
-
-🛠️ Technology Stack
-
-MARK UPSC combines modern web technologies and AI integrations to create an accessible, intelligent UPSC preparation platform.
-
-🌐 Frontend Development
-
-"HTML5" (https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-"CSS3" (https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-"JavaScript" (https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-🤖 Artificial Intelligence
-
-"AI" (https://img.shields.io/badge/Artificial_Intelligence-412991?style=for-the-badge&logo=openai&logoColor=white)
-"LLM" (https://img.shields.io/badge/Large_Language_Models-6A5ACD?style=for-the-badge)
-"RAG" (https://img.shields.io/badge/Retrieval_Augmented_Generation-008080?style=for-the-badge)
-
-☁️ Hosting & Deployment
-
-"Cloudflare" (https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
-"GitHub" (https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-
-🔧 Development Tools
-
-"VS Code" (https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-"Git" (https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+-
