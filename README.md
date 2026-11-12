@@ -72,13 +72,13 @@ Cloudflare| Website hosting and deployment
 ---
 ---
 
- ## 🏗️ System Architecture & Technical Design
+ # 🏗️ System Architecture & Technical Design
 
 MARK UPSC follows a modular, web-based architecture designed to integrate multiple AI providers, intelligent learning workflows, and UPSC preparation resources into a unified platform.
 
 The architecture combines frontend technologies, AI-powered processing, context-aware retrieval, and cloud-based deployment to deliver an accessible and scalable learning experience.
 
-### 🔄 High-Level Architecture
+# 🔄 High-Level Architecture
 
 ```mermaid
 flowchart TD
@@ -107,7 +107,7 @@ flowchart TD
     C --> Q["Cloudflare Hosting & Deployment"]
 ```
 
-### ⚙️ Core Architectural Components
+# ⚙️ Core Architectural Components
 
 - **Frontend Application:** Web-based interface built using HTML5, CSS3 and JavaScript.
 - **Modular Learning System:** Integrates study materials, revision, practice, quizzes and progress tracking.
@@ -116,7 +116,7 @@ flowchart TD
 - **Retrieval-Augmented Generation (RAG):** Enables context-aware information retrieval for supported AI workflows.
 - **Cloud Deployment:** Website hosting and deployment through Cloudflare.
 
-### 🧠 AI Integration Architecture
+# 🧠 AI Integration Architecture
 
 MARK UPSC incorporates multiple AI providers to support intelligent educational workflows.
 
@@ -129,7 +129,7 @@ Key capabilities include:
 - Retrieval-based information processing.
 - AI-assisted UPSC preparation workflows.
 
-### 📚 Application Workflow
+# 📚 Application Workflow
 
 1. Aspirants access the MARK UPSC web platform.
 2. Users interact with the preparation dashboard.
@@ -137,7 +137,7 @@ Key capabilities include:
 4. AI services support answer evaluation and learning assistance.
 5. Progress tracking helps monitor preparation activities.
 
-### 🚀 Architecture Highlights
+# 🚀 Architecture Highlights
 
 - Modular and extensible design.
 - Multiple AI provider integration.
@@ -146,4 +146,14 @@ Key capabilities include:
 - Unified UPSC preparation experience.
 - Cloud-based deployment.
 - Foundation for future scalability and enhancements.
--
+---
+
+ 🖥️ Platform Preview
+
+ # 🏠 Homepage
+![MARK UPSC Homepage](screenshots/homepage.png)
+
+# 📊 Aspirant Dashboard
+![MARK UPSC Dashboard](screenshots/dashboard.png)
+
+Explore the platform: https://markupsc.in
